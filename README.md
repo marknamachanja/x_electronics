@@ -17,5 +17,7 @@ Built with raw SQL utilizing Window Functions for real-time aggregation:
 1. **Stock Balance:** Displays real-time inventory balances and valuation rates per warehouse.
 2. **Stock Ledger:** Displays cumulative quantities and running balances ordered by posting date.
 
+Link to the Google Drive
+https://drive.google.com/drive/folders/1e-zHJCnu5OJhxyqYUM_ioyzmjf772uqc?usp=sharing
 ---
 *Developed by Mark Simiyu Namachanja*

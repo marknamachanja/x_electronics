@@ -1,0 +1,32 @@
+{
+ "add_total_row": 0,
+ "add_translate_data": 0,
+ "columns": [],
+ "creation": "2026-08-31 16:48:39.419299",
+ "disable_prepared_report_automation": 0,
+ "disabled": 0,
+ "docstatus": 0,
+ "doctype": "Report",
+ "doctype_to_sync": [],
+ "filters": [],
+ "generate_csv": 0,
+ "idx": 0,
+ "is_standard": "Yes",
+ "modified": "2026-08-31 16:49:02.694583",
+ "modified_by": "Administrator",
+ "module": "X Electronics",
+ "name": "Stock Ledger",
+ "owner": "Administrator",
+ "prepared_report": 0,
+ "query": "SELECT \n    name AS \"SLE:Link/Stock Ledger Entry:120\",\n    posting_date AS \"Date:Date:100\",\n    item AS \"Item:Link/Item:120\",\n    warehouse AS \"Warehouse:Link/Warehouse:150\",\n    qty AS \"Qty:Float:100\",\n    rate AS \"Rate:Currency:100\",\n    SUM(qty) OVER (PARTITION BY item, warehouse ORDER BY posting_date, name) AS \"Cumulative Qty:Float:120\",\n    stock_entry AS \"Stock Entry:Link/Stock Entry:120\"\nFROM `tabStock Ledger Entry`\nWHERE docstatus = 1\nORDER BY posting_date ASC, name ASC",
+ "ref_doctype": "Stock Ledger Entry",
+ "report_name": "Stock Ledger",
+ "report_type": "Query Report",
+ "roles": [
+  {
+   "role": "System Manager"
+  }
+ ],
+ "snapshot_report": 0,
+ "timeout": 0
+}

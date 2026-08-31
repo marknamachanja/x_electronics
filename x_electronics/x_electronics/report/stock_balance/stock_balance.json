@@ -1,0 +1,32 @@
+{
+ "add_total_row": 0,
+ "add_translate_data": 0,
+ "columns": [],
+ "creation": "2026-08-31 16:47:29.113607",
+ "disable_prepared_report_automation": 0,
+ "disabled": 0,
+ "docstatus": 0,
+ "doctype": "Report",
+ "doctype_to_sync": [],
+ "filters": [],
+ "generate_csv": 0,
+ "idx": 0,
+ "is_standard": "Yes",
+ "modified": "2026-08-31 16:47:52.716332",
+ "modified_by": "Administrator",
+ "module": "X Electronics",
+ "name": "Stock Balance",
+ "owner": "Administrator",
+ "prepared_report": 0,
+ "query": "SELECT \n    sle.item AS \"Item:Link/Item:120\",\n    sle.warehouse AS \"Warehouse:Link/Warehouse:150\",\n    SUM(sle.qty) AS \"Balance Qty:Float:120\",\n    (SELECT COALESCE(SUM(qty * rate) / NULLIF(SUM(qty), 0), 0) \n     FROM `tabStock Ledger Entry` \n     WHERE item = sle.item AND qty > 0 AND docstatus = 1) AS \"Valuation Rate:Currency:120\",\n    SUM(sle.qty) * (SELECT COALESCE(SUM(qty * rate) / NULLIF(SUM(qty), 0), 0) \n                    FROM `tabStock Ledger Entry` \n                    WHERE item = sle.item AND qty > 0 AND docstatus = 1) AS \"Balance Value:Currency:120\"\nFROM `tabStock Ledger Entry` sle\nWHERE sle.docstatus = 1\nGROUP BY sle.item, sle.warehouse",
+ "ref_doctype": "Stock Ledger Entry",
+ "report_name": "Stock Balance",
+ "report_type": "Query Report",
+ "roles": [
+  {
+   "role": "System Manager"
+  }
+ ],
+ "snapshot_report": 0,
+ "timeout": 0
+}

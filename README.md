@@ -18,29 +18,4 @@ Built with raw SQL utilizing Window Functions for real-time aggregation:
 2. **Stock Ledger:** Displays cumulative quantities and running balances ordered by posting date.
 
 ---
-
-## Screenshots
-
-### 1. Master Data (Items & Warehouses)
-*Item List View*
-![Item List](screenshots/item_list.png)
-
-*Warehouse List*
-![Warehouse List](screenshots/warehouse_list.png)
-
-### 2. Transactions
-*Stock Entry Form (Receipt)*
-![Stock Entry Form](screenshots/stock_entry_form.png)
-
-*Stock Entry List*
-![Stock Entry List](screenshots/stock_list.png)
-
-*Stock Ledger Entry List*
-![Stock Ledger Entry](screenshots/stock_ledger_entry.png)
-
-### 3. Analytics & Reporting
-*Stock Balance Report (Stateless Valuation)*
-![Stock Balance](screenshots/stock_balance.png)
-
----
 *Developed by Mark Simiyu Namachanja*
